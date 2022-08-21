@@ -1,29 +1,48 @@
-<h2># 1mg.com Clone</h2>
 
-<hr><br>
 
-<h2>Tech Stack<h2/>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>React.js</li>
-  <li>MongoDB</li>
-  <li>Redux</li>
-  <li>Node.js</li>
-  <hr><br>
-<h2>Features :</h2><br>
-  <li>Homepage - The landing Page</li>
-  <li>Login/Signup Page </li>
-  <li>Jwt(tokens,refreshTokens)</li>
-  <li>JS-Cookies(storing tokens in cookies)</li>
-  <li>Oauth(gmail)</li>
-  <li>Twilio</li>
-  <li>Product Page to browse all products based on categories</li>
-  <li>Sort products by prices and ratings</li>
-  <li>Filter products by brands and discounts</li>
-  <li>Pagination</li>
-  <li>Checkout Page</li>
-  <hr><br>
+# Inspired from TATA 1mg.com
+
+This is Collabrated project and accociated with Masai Shcool.
+Our main objective is to complete all main functionality of TATA 1mg.com, such as User Authentication, Add to Cart/ Buy and filter, Sorting of the products, Cart page, Checkout page and payment in a given time constraints.
+
+- [Click here](onemgclone.vercel.app/) to see preview of our project.
+
+TATA 1mg.com is an e-commerce web application that widely provides e-pharmacy, diagnostics, e-consultation, and healthcare solutions related service all across india and in this project we have tried to make a replica of this web application.
+
+## Credits
+
+- Images : [1mg.com](https://www.1mg.com/)
+- Content : [1mg.com.com](https://www.1mg.com/)
+- Icons : [Font Awesome](https://fontawesome.com/)
+- References : [MDN Docs](https://developer.mozilla.org/en-US/) | [W3School](https://www.w3schools.com/)
+
+## Tech Stack
+
+- React.Js
+- Redux
+- ExpressJs
+- MongoDB
+- Material UI
+- Styled-Components CSS
+- NodeJs
+- HTML5
+- CSS3
+- JWT
+- JavaScript
+
+## Features
+- Homepage - The landing Page
+- Login/Signup Page 
+- Jwt(tokens,refreshTokens)
+- JS-Cookies(storing tokens in cookies)
+- Google Oauth(gmail)
+- Twilio (For OTP Authentication)
+- Product Page to browse all products based on categories
+- Sort products by prices and ratings
+- Filter products by brands and discounts
+- Pagination
+- Checkout Page
+
   <h4>Homepage</h4>
  <img src="./frontend/src/assets/readme images/Screenshot from 2022-07-24 12-57-53.png" alt="1mg ScreenShot currently unavailable"/>
 
