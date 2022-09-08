@@ -49,7 +49,7 @@ const HeaderP1 = () => {
           <Li val={state.otp}>
               <Link className="linkref1" to={"/login"}>Login | Signup</Link>
               <Link className="linkref2" to={"#"} onMouseEnter ={()=>setdel(!del)}>hello {state.username}</Link>
-              <HiddenHead val={del}>
+              <HiddenHead val={del} onMouseLeave={()=>setdel(false)}>
                 <ul>
                   <li>Hi,There</li>
                   <hr style={{color:"grey",marginTop:"-10%"}}/>
@@ -70,6 +70,7 @@ const HeaderP1 = () => {
                   <li onClick={()=>{
                     dispatch(userotp(""))
                     dispatch(username(""))
+                    localStorage.clear();
                   }}>Logout</li>
                 </ul>
               </HiddenHead> 

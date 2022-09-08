@@ -16,7 +16,7 @@ export const Cart = () => {
   const [obj,setObj] = useState({})
   const navigate = useNavigate()
 
-  const [myfalse,setfalse]=React.useState(false)
+
   const dispatch = useDispatch()
   const button = {
     bg: "#ff6f61",
@@ -35,10 +35,25 @@ useEffect(()=>{
 
 
   const getcart = ()=>{
+
+    if(!state.username || state.username==undefined || state.username==null)
+    {
+      return
+    }
     axios.get(`https://unit-6projectbackend.herokuapp.com/getcart/${state.username}`).then(({data})=>{
         setCartData(data.data[0].cats)
 
           let obj={}
+
+          if(data.data.length==0)
+          {
+            return
+          }
+
+          if(data.data[0].cats.length==0)
+          {
+            return 
+          }
         data.data[0].cats.map((ele)=>{
           obj[ele._id]=1;
         })
@@ -54,6 +69,7 @@ useEffect(()=>{
   var subTotal = state.cartdata.reduce(function (acc, elem) {
     return acc + elem.price * count[elem._id];
   }, 0);
+console.log(subTotal,"happend")
 
   const handleCheckout = ()=>{
     navigate("/address");
@@ -80,12 +96,6 @@ useEffect(()=>{
               <div onClick={()=>{
                 let obj={_id:el._id,username:state.username,obj:el._id}
                 dispatch(removecart(obj))
-              axios.post("https://unit-6projectbackend.herokuapp.com/removequant",
-              {_id:el._id,username:state.username,obj:el._id})
-              .then((data)=>{
-                setCartData(data.data[0].cats)
-                setfalse(true)
-              })  
               }    
              } 
               
@@ -99,13 +109,24 @@ useEffect(()=>{
 
               <div className={styles.deletecart}>
                 <img
-                  onClick={() =>{setCount({...count,[el._id]:count[el._id]-1})
+                  onClick={() =>{
+                    
+                    if(count[el._id]==1)
+                    {
+                      return 
+                    }
+                    setCount({...count,[el._id]:count[el._id]-1})
                 }}
                   src="https://www.1mg.com/images/minus-cart.svg"
                 />
                 <p>{count[el._id]}</p>
                 <img
-                onClick={() =>{setCount({...count,[el._id]:count[el._id]+1})
+                onClick={() =>{
+                  if(count[el._id]==10)
+                  {
+                    return
+                  }
+                  setCount({...count,[el._id]:count[el._id]+1})
               }}
                   src="https://www.1mg.com/images/plus-cart.svg"
                 />

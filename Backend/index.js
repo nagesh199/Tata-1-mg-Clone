@@ -33,8 +33,8 @@ app.get("/",(req,res)=>{
 })
 
 
-
-app.listen(8080,async()=>{
+const PORT = process.env.PORT || 8080
+app.listen(PORT,async()=>{
     await connect
-    console.log("server started")
+    console.log("server started 123")
 })

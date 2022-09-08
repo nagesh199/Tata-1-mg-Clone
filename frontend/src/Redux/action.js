@@ -1,4 +1,4 @@
-import { USEROTP, USERNAME ,USERCART} from "./actiontype";
+import { USEROTP, USERNAME ,USERCART,USERTOTAL} from "./actiontype";
 import axios from "axios";
 export const GETDATA = "GETDATA";
 export const DESDATA = "DESDATA";
@@ -38,6 +38,13 @@ export const cartdata = (payload) => ({
   type: CARTDATA,
   payload,
 });
+
+export const usertotal=(payload)=>{
+  return{
+    type:USERTOTAL,
+    payload
+  }
+}
 
 export const userotp = (payload) => {
   return {

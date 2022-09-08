@@ -1,4 +1,4 @@
-import { USEROTP, USERNAME } from "./actiontype";
+import { USEROTP, USERNAME,USERTOTAL } from "./actiontype";
 import { Loaddata, Savedata } from "../utils/localstorage";
 import {
   DESDATA,
@@ -15,7 +15,8 @@ const initState = {
   productsData: [],
   allproducts: [],
   desData: {},
-  cartdata:[]
+  cartdata:[],
+  total:0
 };
 
 export const Userreducer = (state = initState, action) => {
@@ -68,6 +69,12 @@ export const Userreducer = (state = initState, action) => {
       };
     }
 
+    case USERTOTAL:{
+      return{
+        ...state,
+        total:action.payload
+      }
+    }
     case DISCOUNTFILTER: {
       return {
         ...state,
