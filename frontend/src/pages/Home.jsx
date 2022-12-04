@@ -501,7 +501,7 @@ export const Home = () => {
   const getData = async (limit, skip) => {
     try {
       let { data } = await axios.get(
-        `https://unit-6projectbackend.herokuapp.com/slider?limit=${limit}&skip=${skip}`
+        `${process.env.REACT_APP_API}/slider?limit=${limit}&skip=${skip}`
       );
       return data.data;
     } catch (e) {
