@@ -59,7 +59,7 @@ export const username = (payload) => {
 };
 
 export const fetchdata = () => async (dispatch) => {
-  let res = await axios.get("${process.env.REACT_APP_API}/alldata");
+  let res = await axios.get(`${process.env.REACT_APP_API}/alldata`);
   dispatch(getdata(res.data.data));
 };
 
